@@ -11,6 +11,12 @@ const enableCustomLayout = () => {
 definePageMeta({
   // layout: "custom", // カスタムレイアウト(ファイル名)を指定
   layout: false, // レイアウトを無効化
+  middleware: "auth", // ミドルウェアをファイル名で指定
+  // inlineでミドルウェアを指定することも可能
+  // middleware: defineNuxtRouteMiddleware((to, from) => {
+  //   console.log("to", to);
+  //   console.log("from", from);
+  // }),
 });
 </script>
 <template>
