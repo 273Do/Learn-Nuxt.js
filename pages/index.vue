@@ -39,6 +39,10 @@ const handleClick = () => {
 import "@/assets/css/style.css";
 
 const { $hello } = useNuxtApp();
+// ページごとに遷移アニメーションを無効化
+definePageMeta({
+  pageTransition: false,
+});
 </script>
 <template>
   <div>
