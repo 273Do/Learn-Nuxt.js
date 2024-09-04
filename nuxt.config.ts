@@ -3,6 +3,8 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   app: {
+    pageTransition: { name: "page", mode: "out-in" },
+    // pageTransition: false, // アプリ全体で無効化
     head: {
       title: "Nuxt 3 basic",
       meta: [{ name: "description", content: "Nuxt 3 for beginners" }],
