@@ -28,6 +28,8 @@ useHead({
 </script>
 <template>
   <div>
+    <!-- 全てのページで言語がjaになる -->
+    <Html lang="ja" />
     <!-- <NavNavbar /> -->
     <Navbar />
     <slot />

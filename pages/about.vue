@@ -19,20 +19,25 @@ definePageMeta({
   // }),
 });
 // useMeta関数でmeta情報を設定
-const title = ref("Aboutページ"); // 動的に変更可能
-const description = ref("Aboutページ");
-useHead({
-  title,
-  meta: [
-    {
-      name: "description",
-      content: description,
-    },
-  ],
-});
+// const title = ref("Aboutページ"); // 動的に変更可能
+// const description = ref("Aboutページ");
+// useHead({
+//   title,
+//   meta: [
+//     {
+//       name: "description",
+//       content: description,
+//     },
+//   ],
+// });
 </script>
 <template>
   <div>
+    <!-- タグを使用して設定も可能 -->
+    <Head>
+      <Title>Aboutページ</Title>
+      <Meta name="description" content="Aboutページ" />
+    </Head>
     <button @click="enableCustomLayout">Update layout</button>
   </div>
 </template>
