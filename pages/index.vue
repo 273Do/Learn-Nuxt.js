@@ -43,10 +43,24 @@ const { $hello } = useNuxtApp();
 definePageMeta({
   pageTransition: false,
 });
+
+const show = ref(false);
+
+const handleClick = () => {
+  show.value = true;
+};
 </script>
 <template>
   <div>
+    <Html lang="ja">
+      <Head>
+        <Title>Indexページ</Title>
+        <Meta name="description" content="Indexページ" />
+      </Head>
+    </Html>
     <h1>Main Page</h1>
+    <button @click="handleClick">Coupon Get</button>
+    <LazyCoupon v-if="show" />
     <h2>{{ $hello("World") }}</h2>
     <div>
       <!-- パスに/publicは不要 -->

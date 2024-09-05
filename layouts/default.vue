@@ -15,9 +15,21 @@
 <!-- </template> -->
 <script setup>
 import Navbar from "@/components/Navbar";
+// タイトル - Nuxt 3 basicのようにtitleをページごとに設定できる
+// useHead({
+//   titleTemplate: (title) => {
+//     return title ? `${title} - Nuxt 3 basic` : "Nuxt 3 basic";
+//   },
+// });
+// titleTemplateで関数を利用しない場合はtitleの箇所に%sを設定することでtitleが設定される
+useHead({
+  titleTemplate: "%s - Nuxt 3 basic",
+});
 </script>
 <template>
   <div>
+    <!-- 全てのページで言語がjaになる -->
+    <Html lang="ja" />
     <!-- <NavNavbar /> -->
     <Navbar />
     <slot />
