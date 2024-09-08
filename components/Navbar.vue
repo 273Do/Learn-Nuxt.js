@@ -7,6 +7,7 @@
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/about">About</NuxtLink>
     <NuxtLink to="/counter">Counter</NuxtLink>
+    <NuxtLink to="/posts">Posts</NuxtLink>
     <!-- nameプロパティでルーティングの名前を利用することでも設定可能 -->
     <NuxtLink :to="{ name: 'users-list' }">User List</NuxtLink>
     <!-- toではなくhrefを使用可能 -->
