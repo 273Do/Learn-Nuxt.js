@@ -2,6 +2,14 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
+
+  // css: ["/assets/css/style.css"],
+  // components: [
+  //   {
+  //     path: "~/components",
+  //     pathPrefix: false,
+  //   },
+  // ],
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     // pageTransition: false, // アプリ全体で無効化
@@ -11,11 +19,6 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", href: "/favicon.ico" }],
     },
   },
-  // css: ["/assets/css/style.css"],
-  // components: [
-  //   {
-  //     path: "~/components",
-  //     pathPrefix: false,
-  //   },
-  // ],
+
+  modules: ["@nuxtjs/tailwindcss"],
 });
