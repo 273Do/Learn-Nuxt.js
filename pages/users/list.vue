@@ -1,4 +1,6 @@
 <!-- users/list -->
 <template>
-  <h1>User Listページ</h1>
+  <div>
+    <h1>User Listページ</h1>
+  </div>
 </template>

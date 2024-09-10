@@ -10,6 +10,8 @@
     <NuxtLink to="/posts">Posts</NuxtLink>
     <!-- nameプロパティでルーティングの名前を利用することでも設定可能 -->
     <NuxtLink :to="{ name: 'users-list' }">User List</NuxtLink>
+    <NuxtLink to="/users">User Index</NuxtLink>
+    <NuxtLink to="/users/1">User Num</NuxtLink>
     <!-- toではなくhrefを使用可能 -->
     <NuxtLink to="https://google.com" target="_blank">Google</NuxtLink>
   </nav>

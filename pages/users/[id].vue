@@ -4,15 +4,15 @@ const router = useRoute();
 
 console.log(router.params.id);
 
-useMeta({
-  title: "Nuxt 3",
-  meta: [
-    {
-      name: "description",
-      content: `User Id: ${router.params.id}`,
-    },
-  ],
-});
+// useMeta({
+//   title: "Nuxt 3",
+//   meta: [
+//     {
+//       name: "description",
+//       content: `User Id: ${router.params.id}`,
+//     },
+//   ],
+// });
 </script>
 <template>
   <div>
