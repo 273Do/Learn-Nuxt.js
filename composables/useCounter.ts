@@ -4,13 +4,18 @@
 // reactでいうhooksのようなもの
 
 // カウンター
-export function useCounter(initialValue: number) {
-  const count = ref(initialValue);
-  const inc = () => (count.value = count.value + 1);
-  const dec = () => (count.value = count.value - 1);
-  return {
-    count,
-    inc,
-    dec,
-  };
+// export function useCounter(initialValue: number) {
+//   const count = ref(initialValue);
+//   const inc = () => (count.value = count.value + 1);
+//   const dec = () => (count.value = count.value - 1);
+//   return {
+//     count,
+//     inc,
+//     dec,
+//   };
+// }
+
+// useStateを使用して書き換え
+export function useCounter() {
+  return useState("counter", () => 0);
 }
