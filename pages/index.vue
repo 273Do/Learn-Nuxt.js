@@ -59,6 +59,21 @@ const { data: posts, error } = await useAsyncData(() => {
   return $fetch("https://jsonplaceholder.typicode.com/posts?_limit=5");
 });
 console.log(useNuxtApp().payload.data);
+
+// const { data } = useFetch("/api/hello");
+const { data: tasks, refresh } = useFetch("/api/task");
+
+const task = ref("");
+const addTask = () => {
+  // console.log(task.value);
+  $fetch("/api/task", {
+    method: "post",
+    body: { task: task.value },
+  });
+  // サーバー側でデータが更新された後に再度データを取得する
+  refresh();
+  task.value = ""; // フォームのリセット
+};
 </script>
 <template>
   <div>
@@ -73,9 +88,31 @@ console.log(useNuxtApp().payload.data);
     <LazyCoupon v-if="show" />
 
     <div>
+      <!-- <p class="font-bold">{{ data }}</p> -->
+      <h1>form area</h1>
+      <ul>
+        <li class="text-red-600" v-for="task in tasks" :key="task.id">
+          {{ task.task }}
+        </li>
+      </ul>
+      <form @submit.prevent="addTask">
+        <div>
+          <input v-model="task" />
+        </div>
+        <div>
+          <button type="submit">タスクを登録</button>
+        </div>
+      </form>
+    </div>
+
+    <hr class="m-4" />
+
+    <div>
       <p v-if="error">{{ error }}</p>
       <ul>
-        <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
+        <li class="text-blue-400" v-for="post in posts" :key="post.id">
+          {{ post.title }}
+        </li>
       </ul>
     </div>
 
